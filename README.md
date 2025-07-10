@@ -13,3 +13,13 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+## Tetris Game
+
+The repository now includes a small Tetris implementation written with `pygame`. You can run it with:
+
+```bash
+python tetris.py
+```
+
+Make sure you have the `pygame` package installed in your environment. The game opens a window where you can move and rotate the pieces using the arrow keys.
