@@ -36,10 +36,11 @@ SHAPES = [
 COLORS = [CYAN, BLUE, ORANGE, YELLOW, GREEN, PURPLE, RED]
 
 class Piece:
-    def __init__(self, shape, color):
+    def __init__(self, shape, color, board_width):
         self.shape = shape
         self.color = color
-        self.x = int(len(shape[0]) / 2 + 5)
+        # Start each piece horizontally centered on the board.
+        self.x = board_width // 2 - len(shape[0]) // 2
         self.y = 0
 
     def rotate(self):
@@ -56,7 +57,7 @@ class Tetris:
         idx = random.randrange(len(SHAPES))
         shape = SHAPES[idx]
         color = COLORS[idx]
-        return Piece(shape, color)
+        return Piece(shape, color, self.width)
 
     def collide(self, piece, dx, dy):
         for y, row in enumerate(piece.shape):
